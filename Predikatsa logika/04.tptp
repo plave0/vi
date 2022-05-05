@@ -1,0 +1,17 @@
+% Ako postoji cipela koja u svakom trenutku odgovara svakoj nozi,
+%   onda za svaku nogu postoji cipela koja joj u nekom trenutku odgovara i
+%   za svaku nogu postoji trenutak takav da postoji cipela koja joj u tom trenutku odgovara.
+
+% 1. Struktura
+%   A => (B & C) 
+% 2. Predikati
+%   T - trenutak
+%   N - noga
+%   C - cipela
+%   odgovara(N, T, C) - nogi N u trenutku T odgovara cipela C
+% 3. Kvantifikatori
+
+fof(a1, axiom, ?[C]: (![T, N] : (odgovara(C, T, N)) )).
+fof(c1, conjecture, (![N]: (?[C,T]: (odgovara(C, T, N)))) & (![N]: (?[T, C]:(odgovara(N, T, C))))).
+
+
